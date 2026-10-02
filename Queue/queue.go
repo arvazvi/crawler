@@ -39,3 +39,11 @@ func (q *Queue) Deque() (string, error) {
 func (q *Queue) Size() int {
 	return q.size
 }
+
+func (q *Queue) Total() int {
+	return q.total
+}
+
+func NewQueue() *Queue {
+	return &Queue{elements: make([]string, 0)}
+}

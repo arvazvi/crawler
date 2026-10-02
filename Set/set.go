@@ -25,7 +25,7 @@ func (s *HashSet) Contains(value string) bool {
 	return s.hashmap[Hash(value)]
 }
 
-func (s *HashSet) Size(value string) int {
+func (s *HashSet) Size() int {
 	return s.size
 }
 
@@ -34,4 +34,8 @@ func Hash(url string) uint64 {
 	h.Write([]byte(url))
 
 	return h.Sum64()
+}
+
+func NewSet() *HashSet {
+	return &HashSet{hashmap: make(map[uint64]bool)}
 }
